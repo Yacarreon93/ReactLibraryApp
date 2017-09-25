@@ -14,7 +14,7 @@ class NewBook extends Component {
   onFormSubmit (event) {
     event.preventDefault()
     // @TODO: validate data
-    let book = { 
+    let book = {
       title: this.refs.titleInput.value,
       author: this.refs.authorInput.value,
       category: this.refs.categoryInput.value,

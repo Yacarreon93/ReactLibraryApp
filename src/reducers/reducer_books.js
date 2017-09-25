@@ -9,6 +9,7 @@ export default function (state=null, action) {
       return action.payload
     case 'BORROW_BOOK':
     case 'RETURN_BOOK':
+    case 'SAVE_BOOK':
       state = state.map(book => {
         if (book.id === action.payload.id) 
           return action.payload

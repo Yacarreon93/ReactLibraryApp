@@ -79,6 +79,23 @@ function returnBook (id) {
   }
 }
 
+function saveBook (id, data) {
+  let savedBook
+  books = books.map((book) => {
+    if (book.id === id) {      
+      for (let key in data) {
+        book[key] = data[key]
+      }
+      savedBook = book
+    }
+    return book
+  })
+  return {
+    type: 'SAVE_BOOK',
+    payload: savedBook
+  }
+}
+
 export default {
   getAllBooks,
   searchBooks,
@@ -86,5 +103,6 @@ export default {
   deleteBook,
   selectBook,
   borrowBook,
-  returnBook
+  returnBook,
+  saveBook
 }
