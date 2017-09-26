@@ -8,7 +8,8 @@ database.categories = [
   'Romance',
   'Mystery',
   'Horror',
-  'Self help'
+  'Self help',
+  'Education'
 ]
 
 database.books = [
@@ -26,6 +27,27 @@ database.books = [
     category: "Horror",
     published_date: "Sep 15 1986",
   },
+  {
+    id: 3,
+    title: "The Hunger Games",
+    author: " Suzanne Collins",
+    category: "Science fiction",
+    published_date: "Aug 17 2012",
+  }, 
+  {
+    id: 4,
+    title: "Clean Code",
+    author: "Robert C. Martin",
+    category: "Education",
+    published_date: "Sep 23 2009",
+  },
+  {
+    id: 5,
+    title: "The Pragmatic Programmer",
+    author: "Dave Thomas",
+    category: "Education",
+    published_date: "Oct 11 1999",
+  }
 ]
 
 export default database

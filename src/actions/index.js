@@ -1,20 +1,21 @@
 import database from '../database'
 
-let categories = database.categories
 let books = database.books
 let lastId = database.books[database.books.length - 1].id
+let limit = 3
 
 function getlastId () {
   return ++lastId
 }
 
-function getAllBooks () {
+function getAllBooks (page = 1) {
   books = books.sort((a, b) => {
     return a.id === b.id ? 0 : a.id > b.id ? -1 : 1
   })
+  let pagedBooks = books.slice(0 + (limit * page) - limit, limit * page)
   return {
     type: 'GET_ALL_BOOKS',
-    payload: books
+    payload: pagedBooks
   }
 }
 

@@ -25,7 +25,6 @@ class BookDetail extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    let book = nextProps.activeBook
     this.setState({ book: nextProps.activeBook })
   }
   
@@ -44,8 +43,9 @@ class BookDetail extends Component {
       published_date: (new Date(this.state.updatedBook.published_date)).toDateString()
     }
     this.props.saveBook(this.state.book.id, data)
-    this.state.isEditing = false
-    this.setState(this.state)
+    let newState = Object.assign({}, this.state)
+    newState.isEditing = false
+    this.setState(newState)
   }
     
   deleteBook (book) {
@@ -54,20 +54,21 @@ class BookDetail extends Component {
   }
   
   toggleEdition () {
-    this.state.isEditing = !this.state.isEditing
-    if (this.state.isEditing) {
-      this.state.updatedBook = Object.assign({}, this.state.book)
+    let newState = Object.assign({}, this.state)
+    newState.isEditing = !newState.isEditing
+    if (newState.isEditing) {
+      newState.updatedBook = Object.assign({}, this.state.book)
     }
-    this.setState(this.state)
+    this.setState(newState)
   }
 
   onChangeField (event) {
     let key = event.target.id.replace('Input', '')
     let value = event.target.value
     if (key.includes('date')) value = new Date(value).toDateString()
-    this.state.updatedBook[key] = value
-    console.log('state', this.state)
-    this.setState(this.state)
+    let newState = Object.assign({}, this.state)
+    newState.updatedBook[key] = value
+    this.setState(newState)
   }
   
   onModalSubmit (user) {
@@ -77,8 +78,9 @@ class BookDetail extends Component {
   }
 
   onClickCategory (category) {
-    this.state.updatedBook.category = category
-    this.setState(this.state)
+    let newState = Object.assign({}, this.state)
+    newState.updatedBook.category = category
+    this.setState(newState)
   }
   
   getformattedDate (date) {

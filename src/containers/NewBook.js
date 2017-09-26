@@ -17,13 +17,15 @@ class NewBook extends Component {
   }
 
   onChangeCategory (event) {
-    this.state.category = event.target.value
-    this.setState(this.state)
+    let newState = Object.assign({}, this.state)
+    newState.category = event.target.value
+    this.setState(newState)
   }
 
   onClickCategory (category) {
-    this.state.category = category
-    this.setState(this.state)
+    let newState = Object.assign({}, this.state)
+    newState.category = category
+    this.setState(newState)
   }
 
   onFormSubmit (event) {
