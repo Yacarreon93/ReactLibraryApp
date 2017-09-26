@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import ToggleDisplay from 'react-toggle-display';
 
 import Modal from '../components/Modal'
+import CategoryAutocompleter from '../components/CategoryAutocompleter'
 
 import actions from '../actions/index'
 
@@ -20,6 +21,7 @@ class BookDetail extends Component {
     this.toggleEdition = this.toggleEdition.bind(this)    
     this.onChangeField = this.onChangeField.bind(this)
     this.onModalSubmit = this.onModalSubmit.bind(this)
+    this.onClickCategory = this.onClickCategory.bind(this)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -73,6 +75,11 @@ class BookDetail extends Component {
     if (!book.user) this.props.borrowBook(book.id, user)
     else this.props.returnBook(book.id)
   }
+
+  onClickCategory (category) {
+    this.state.updatedBook.category = category
+    this.setState(this.state)
+  }
   
   getformattedDate (date) {
     let formattedDate = new Date(date)
@@ -109,7 +116,16 @@ class BookDetail extends Component {
                 <label htmlFor="categoryInput"><b>Category</b></label>
                 {!this.state.isEditing && <p>{book.category}</p>}
                 <ToggleDisplay if={this.state.isEditing}>
-                  <input ref="categoryInput" type="text" className="form-control" id="categoryInput" placeholder="Enter category" value={updatedBook.category} onChange={this.onChangeField} required />
+                  <input 
+                    required 
+                    id="categoryInput" 
+                    ref="categoryInput" 
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Enter category" 
+                    value={updatedBook.category} 
+                    onChange={this.onChangeField} />
+                  <CategoryAutocompleter term={updatedBook.category} onClick={this.onClickCategory} />
                 </ToggleDisplay>    
               </div>
               <div className="form-group">
