@@ -1,6 +1,6 @@
 import database from '../database'
 
-export default function (state=null, action) {
+export default function (state = database.books, action) {
   switch (action.type) {
     case 'GET_ALL_BOOKS':
     case 'SEARCH_BOOKS':
@@ -17,6 +17,6 @@ export default function (state=null, action) {
       })
       return [[], ...state]
     default:
-      return database.books
+      return [[], ...state]
   }
 }
