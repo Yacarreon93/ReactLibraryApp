@@ -1,51 +1,63 @@
 /* Space out content a bit */
 body {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem; }
+  padding-bottom: 1.5rem;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
   padding-right: 1rem;
-  padding-left: 1rem; }
+  padding-left: 1rem;
+}
 
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
   border-bottom: .05rem solid #e5e5e5;
-  /* Make the masthead heading the same height as the navigation */ }
-  .header h3 {
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 3rem; }
+    line-height: 3rem;
+  }
+}
 
 /* Custom page footer */
 .footer {
   padding-top: 1.5rem;
   color: #777;
-  border-top: .05rem solid #e5e5e5; }
+  border-top: .05rem solid #e5e5e5;
+}
 
 /* Customize container */
 @media (min-width: 48em) {
   .container {
-    max-width: 46rem; } }
+    max-width: 46rem;
+  }
+}
 .container-narrow > hr {
-  margin: 2rem 0; }
+  margin: 2rem 0;
+}
 
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: .05rem solid #e5e5e5; }
-  .jumbotron .btn {
+  border-bottom: .05rem solid #e5e5e5;
+  .btn {
     padding: .75rem 1.5rem;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+  }
+}
 
 /* Supporting marketing content */
 .marketing {
-  margin: 0 0 3rem 0; }
-  .marketing p + h4 {
-    margin-top: 1.5rem; }
+  margin: 0 0 3rem 0;
+  p + h4 {
+    margin-top: 1.5rem;
+  }
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 48em) {
@@ -54,20 +66,23 @@ body {
   .marketing,
   .footer {
     padding-right: 0;
-    padding-left: 0; }
-
+    padding-left: 0;
+  }
   /* Space out the masthead */
   .header {
-    margin-bottom: 2rem; }
-
+    margin-bottom: 2rem;
+  }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
-    border-bottom: 0; } }
+    border-bottom: 0;
+  }
+}
+
 /* Pagination */
 .pagination {
   float: right;
-  margin-top: 10px; }
-  .pagination li > a {
+  margin-top: 10px;
+  li > a {
     position: relative;
     float: left;
     padding: 6px 12px;
@@ -76,17 +91,23 @@ body {
     color: #337ab7;
     text-decoration: none;
     background-color: #fff;
-    border: 1px solid #ddd; }
-    .pagination li > a.active {
+    border: 1px solid #ddd;
+    &.active {
       z-index: 3;
       color: #fff;
       cursor: default;
       background-color: #337ab7;
-      border-color: #337ab7; }
+      border-color: #337ab7;
+    }
+  }
+}
 
-.header .logo {
-  display: inline-block; }
-  .header .logo img {
-    width: 100px; }
-
-/*# sourceMappingURL=style.css.map */
+.header {
+  .logo {
+    display: inline-block;
+    img {
+      width: 100px;
+    }
+  }
+  
+}
