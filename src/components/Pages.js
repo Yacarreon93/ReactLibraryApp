@@ -8,7 +8,7 @@ function renderPages (props) {
   for (let i = 1; i <= countPages; i++) {
     links.push(
       <li key={i}>
-        <a className={props.active == i && 'active'} onClick={(event) => props.onClick(event.target.innerHTML)}>{i}</a>
+        <a className={props.active === i && 'active'} onClick={(event) => props.onClick(event.target.innerHTML)}>{i}</a>
       </li>
     )
   }
